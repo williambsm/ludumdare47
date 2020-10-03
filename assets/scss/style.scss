@@ -23,8 +23,13 @@ body {
 	font-family: 'Poppins', sans-serif;
 }
 
-.frame { 
+.page { 
 	height: 100%;
+	&__frame { 
+		padding-left: 300px;
+		height: 100%;
+		position: relative;
+	}
 }
 
 .sidebar { 
@@ -33,6 +38,7 @@ body {
 	height: 100%;
 	color: white;
 	padding: 20px;
+	position: fixed;
 	&__logo { 
 		padding: 20px;
 	}

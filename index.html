@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-    <div id="game" class='frame'>
+    <div id="game" class='page'>
 	    <div class='sidebar'> 
 	    	<div class='sidebar__logo'> 
 	    		<img src='assets/img/logo.png' alt='logo' class='u-full-width' />
@@ -39,10 +39,22 @@
 				</ul>
 			</div>
 	    </div>
-
-	    <div> 
+	    <div class='page__frame'>
+		    <div class='launch-frame'> 
+		    	<div class='launch-frame__top'> 
+		    		countdown
+		    	</div>
+		    	<div class='launch-frame__rocket'> 
+		    		rocket
+		    	</div>
+		    	<div class='launch-frame__bottom'> 
+		    		Mission Details
+		    	</div>
+		    </div>
+		</div>
+	    <!--<div> 
 	    	<rocket>^</rocket>
-	   	</div>
+	   	</div>-->
     </div>
 	<!-- development version, includes helpful console warnings -->
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
