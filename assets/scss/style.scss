@@ -29,6 +29,7 @@ body {
 		padding-left: 300px;
 		height: 100%;
 		position: relative;
+		z-index: 2;
 	}
 }
 
@@ -39,6 +40,7 @@ body {
 	color: white;
 	padding: 20px;
 	position: fixed;
+	z-index: 3;
 	&__logo { 
 		padding: 20px;
 	}
@@ -104,5 +106,57 @@ body {
 	}
 	&__value { 
 		font-size: 1.1em;
+	}
+}
+
+.launch-frame { 
+	position: relative;
+	height: 100%;
+	&__rocket { 
+		position: absolute;
+		transform: translate(-50%, -50%);
+		top: 50%;
+		left: 50%;
+		width: 400px;
+		max-height: 60%;
+		height: 100%;
+	}
+}
+
+.rocket-view { 
+	&__img {
+		position: relative;
+		width: 100%;
+		height: calc(100% - 70px);
+		background-repeat: no-repeat;
+		background-size: auto 80%;
+		background-position: center;
+		&.-first { 
+			background-image: url('../img/rocket-one.png');
+		}
+		&.-second { 
+			background-image: url('../img/rocket-two.png');
+		}
+		&.-third { 
+			background-image: url('../img/rocket-three.png');
+		}
+	}
+	&__launch-btn {
+		font-weight: bold;
+		color: white;
+		text-transform: uppercase;
+		background: rgb(84,125,253);
+		background: linear-gradient(0deg, rgba(84,125,253,1) 0%, rgba(28,163,255,1) 100%);
+		padding: 25px 0;
+		border-radius: 5px;
+		text-align: center;
+		cursor: pointer;
+		transition: all 100ms;
+		width: 100%;
+		border: 0;
+		font-size: 1.1em;
+		&:hover { 
+			transform: translateY(-5px);
+		}
 	}
 }
