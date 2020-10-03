@@ -2,13 +2,43 @@
 <html lang="en">
 <head>
     <title>Rocket Science</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-    <div id="game">
-        <p>It's not rocket science.</p>
+    <div id="game" class='frame'>
+	    <div class='sidebar'> 
+	    	<div class='sidebar__logo'> 
+	    		<img src='assets/img/logo.png' alt='logo' class='u-full-width' />
+	    	</div>
+	    	<div class='sidebar__status'> 
+	    		<span class=''> Awaiting Mission Selection </span>
+	    	</div>
+	    	<div class='sidebar__currency'> 
+	    		<div class='currency-block'>
+	    			<img src='assets/img/currency-icon.svg' alt='currency' class='currency-block__icon' />
+					<span class='currency-block__value'> $1,000,000 </span>
+				</div>
+	    	</div>
+	    	<div class='sidebar__navigation'>
+				<ul class='navigation'> 
+					<li class='navigation__item'> 
+						<a href='' class='navigation__link'> Missions </a> 
+					</li>
+					<li class='navigation__item'> 
+						<a href='' class='navigation__link'> Upgrades </a>
+					</li>
+					<li class='navigation__item'> 
+						<a href='' class='navigation__link'> Achievements </a> 
+					</li>
+					<li class='navigation__item'> 
+						<a href='' class='navigation__link'> Log </a> 
+					</li>
+				</ul>
+			</div>
+	    </div>
     </div>
-    <!-- development version, includes helpful console warnings -->
+	<!-- development version, includes helpful console warnings -->
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="js/main.js"></script>
 </body>

@@ -1,6 +1,4 @@
 // Fonts
-@import url('https://fonts.googleapis.com/css?family=Nunito');
-
 // Bootstrap
 //@import '~bootstrap/scss/bootstrap';
 @import "vendors/flexbox-mixins";
@@ -21,5 +19,81 @@
 @import "layouts/grid";    
 
 body { 
-	background-color: pink;
+	background-color: #070d59;
+	font-family: 'Poppins', sans-serif;
+}
+
+.frame { 
+	height: 100%;
+}
+
+.sidebar { 
+	background-color: #0c1048;
+	width: 300px;
+	height: 100%;
+	color: white;
+	padding: 20px;
+	&__logo { 
+		padding: 20px;
+	}
+	&__status { 
+		border: 2px dashed rgba(255,255,255,0.2);
+		text-align: center;
+		min-height: 70px;
+		padding: 40px 0 20px 0;
+		position: relative;
+		margin-top: 20px;
+		&:before { 
+			content: 'STATUS';
+			position: absolute;
+			top: 15px;
+			left: 0;
+			opacity: 0.5;
+			width: 100%;
+			text-align: center;
+		}
+	}
+	&__currency { 
+		text-align: center;
+		margin: 40px 0;
+	}
+	&__navigation { 
+		
+	}
+}
+
+.navigation { 
+	text-align: center;
+	&__item { 
+		display: block;
+		margin-bottom: 20px;
+	}
+	&__link { 
+		color: white;
+		text-decoration: none;
+		background-color: #0f1451;
+		font-weight: 700;
+		padding: 25px 0;
+		font-size: 1.1em;
+		display: block;
+		border-radius: 4px;
+		transition: all 150ms;
+		&:hover { 
+			background-color: lighten(#0f1451, 10%);
+		}
+	}
+}
+
+.currency-block { 
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	&__icon { 
+		width: 34px;
+		height: auto;
+	}
+	&__value { 
+		font-size: 1.2em;
+		margin-left: 10px;
+	}
 }
