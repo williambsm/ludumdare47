@@ -1,0 +1,96 @@
+
+/* Colours */ 
+
+$white: 					#ffffff;
+$black: 					#000000; 
+
+$purple-dark: 				#2c0d66;
+$purple-mid-dark: 			#3c0a9b;
+$purple: 					#641ee6;
+$purple-mid-light: 			#a278f0;
+$purple-light: 				#dac9f9;
+
+$grey-dark: 				#212142;
+$grey-mid-dark:				#4d4d68; 
+$grey:						#a6a6b3;
+$grey-mid-light:			#dddddd;
+$grey-light: 				#F3F3F5;
+
+$blue:						#3c8cff;
+$blue-mid-light:			#8abaff;
+$blue-light:				#e2eeff;
+
+$green:						#1eb982;
+$green-mid-light:			#78d5b4;
+$green-light:				#ddf5ec;
+
+$yellow:					#ffcd1e;
+$yellow-mid-light:			#ffe178;
+$yellow-light:				#fff7dd;
+
+$red: 						#ff645a;
+$red-mid-light: 			#ffa29c;
+$red-light:					#ffe8e6;
+
+/* Base colors */ 
+
+$base-colors: (
+  ("red", $red),
+  ("blue", $blue),
+  ("green", $green),
+  ("yellow", $yellow),
+  ("purple", $purple),
+  ("grey", $grey),
+); 
+
+/* Social Media Colours */ 
+
+$facebook_color: 			hsla(222, 47%, 40%, 1);     // #365397
+$twitter_color: 			hsla(198, 100%, 47%, 1);    // #00a9f1
+$google_color: 				hsla(217, 89%, 61%, 1);     // #4285f4
+$google_plus_color:			hsla(8, 74%, 53%, 1);       // #e0452c
+$youtube_color:				hsla(0, 100%, 60%, 1);      // #ff3333
+$vimeo_color:				hsla(200, 82%, 61%, 1);     // #48b6ed
+$pinterest_color:			hsla(0, 78%, 45%, 1);       // #ce1a19
+$dribbble_color:			hsla(338, 82%, 60%, 1);     // #ed4584
+$instagram_color:			hsla(208, 46%, 41%, 1);     // #396d9a
+$dropbox_color:				hsla(206, 89%, 46%, 1);     // #0d84de
+$flickr_color:				hsla(334, 100%, 46%, 1);    // #ea0066
+$github_color:				hsla(0, 0%, 18%, 1);        // #2f2f2f
+
+/* Font Sizes */
+
+$default-font-size: 		1.4rem;
+
+/* Grids */
+
+$grid-width:				114rem;
+$gutter-vertical:			8rem;
+$gutter-vertical-small: 	6rem;
+$gutter-horizontal: 		6rem;  
+
+/* Breadpoints */ 
+
+$mobile: 					414px;
+$tablet-port: 				767px;
+$tablet-land: 				991px;
+$desktop: 					1200px;
+$big-desktop: 				1800px;
+
+/* Home specific Variables */
+
+/* App Specific Variables */
+
+$topbar-height: 			7rem;
+$sidebar-width: 			28rem;
+$page-gutter: 				4rem;
+
+/* Admin Specific Variables */
+
+$admin-page-bg:				#F3F3F5;
+$admin-sidebar-bg: 			#354052;
+$admin-sidebar-link:		#bbbbbb;
+
+$admin-topbar-height: 		60px;
+$admin-sidebar-width: 		250px;
+$admin-page-gutter:			4rem;

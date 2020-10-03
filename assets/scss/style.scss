@@ -1,0 +1,25 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// Bootstrap
+//@import '~bootstrap/scss/bootstrap';
+@import "vendors/flexbox-mixins";
+
+@import "abstracts/functions";
+@import "abstracts/mixins";
+@import "abstracts/variables";
+
+@import "base/reset";
+@import "base/base";
+@import "base/utilities";
+@import "base/animations";
+
+//@import "components/main/buttons";
+//@import "components/main/forms";
+//@import "components/main/typography";
+
+@import "layouts/grid";    
+
+body { 
+	background-color: pink;
+}
