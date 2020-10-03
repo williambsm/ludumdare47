@@ -91,9 +91,12 @@ body {
 	&__icon { 
 		width: 34px;
 		height: auto;
+		margin: 0 10px 0 20px;
+		&:first-child { 
+			margin-left: 0;
+		}
 	}
 	&__value { 
-		font-size: 1.2em;
-		margin-left: 10px;
+		font-size: 1.1em;
 	}
 }
