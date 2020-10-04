@@ -76,26 +76,24 @@
 		    	</div>
 		    </div>
 		</div>
-	    <!--<div>
-	    	<rocket>^</rocket>
-	   	</div>-->
-	   	<div class='modal-frame'> 
-	   		<div class='modal-frame__box'> 
+	   	<div v-if="missions.displayResults" class='modal-frame'>
+	   		<div class='modal-frame__box'>
 	   			<h2 class='modal-frame__header'> Mission Report </h2>
 	   			<div class='mission-report'>
-	   				<div class='mission-report__outcome -success'> <!-- -success / -failure --> </div>
-	   				<div class='mission-report__reward-row'>
+	   				<div v-if="missions.results" class='mission-report__outcome -success'></div>
+	   				<div v-if="!missions.results" class='mission-report__outcome -failure'></div>
+	   				<div v-if="missions.results" class='mission-report__reward-row'>
 	   					<div class='mission-report__reward-box'>
 	   						<img src='assets/img/currency-icon.svg' alt='Money' class='mission-report__reward-icon' />
-	   						<span class='mission-report__reward-value'> $10,000 </span>
+	   						<span class='mission-report__reward-value'> ${{ this.missions.selectedMission.displayCurrencyEarnings()}} </span>
 	   					</div>
 	   					<div class='mission-report__reward-box'>
 	   						<img src='assets/img/xp-icon.svg' alt='XP' class='mission-report__reward-icon' />
-	   						<span class='mission-report__reward-value'> 100 </span>
+	   						<span class='mission-report__reward-value'> {{ this.missions.selectedMission.displayExperienceEarnings() }} </span>
 	   					</div>
 	   				</div>
 	   			</div>
-	   			<div class='modal-frame__close'> </div>
+	   			<div v-on:click="missions.hideResults()" class='modal-frame__close'> </div>
 	   		</div>
 	   	</div>
     </div>

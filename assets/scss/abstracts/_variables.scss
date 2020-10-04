@@ -1,8 +1,8 @@
 
-/* Colours */ 
+/* Colours */
 
 $white: 					#ffffff;
-$black: 					#000000; 
+$black: 					#000000;
 
 $purple-dark: 				#2c0d66;
 $purple-mid-dark: 			#3c0a9b;
@@ -11,7 +11,7 @@ $purple-mid-light: 			#a278f0;
 $purple-light: 				#dac9f9;
 
 $grey-dark: 				#212142;
-$grey-mid-dark:				#4d4d68; 
+$grey-mid-dark:				#4d4d68;
 $grey:						#a6a6b3;
 $grey-mid-light:			#dddddd;
 $grey-light: 				#F3F3F5;
@@ -32,7 +32,7 @@ $red: 						#ff645a;
 $red-mid-light: 			#ffa29c;
 $red-light:					#ffe8e6;
 
-/* Base colors */ 
+/* Base colors */
 
 $base-colors: (
   ("red", $red),
@@ -41,9 +41,9 @@ $base-colors: (
   ("yellow", $yellow),
   ("purple", $purple),
   ("grey", $grey),
-); 
+);
 
-/* Social Media Colours */ 
+/* Social Media Colours */
 
 $facebook_color: 			hsla(222, 47%, 40%, 1);     // #365397
 $twitter_color: 			hsla(198, 100%, 47%, 1);    // #00a9f1
@@ -67,9 +67,9 @@ $default-font-size: 		1.4rem;
 $grid-width:				114rem;
 $gutter-vertical:			8rem;
 $gutter-vertical-small: 	6rem;
-$gutter-horizontal: 		6rem;  
+$gutter-horizontal: 		6rem;
 
-/* Breadpoints */ 
+/* Breadpoints */
 
 $mobile: 					414px;
 $tablet-port: 				767px;

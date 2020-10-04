@@ -3,6 +3,8 @@ import Mission from './Mission.js';
 export default class MissionController {
     constructor () {
         this.selectedMission = null;
+        this.displayResults = false;
+        this.results = null;
 
         this.missions = [
             new Mission({
@@ -40,8 +42,18 @@ export default class MissionController {
             player.addExperience(this.selectedMission.experienceReward);
 
             this.selectedMission.addSuccess();
+
+            this.results = true;
         } else {
             this.selectedMission.addFailure();
+            this.results = false;
         }
+
+        this.displayResults = true;
+    }
+
+    hideResults() {
+        this.results = null;
+        this.displayResults = null;
     }
 }
