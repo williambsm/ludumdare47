@@ -17,6 +17,6 @@ var game = new Vue({
         }
     },
     created: function () {
-        this.missions.selectMission(0);
+        this.missions.selectMission(this.missions.missions[0]);
     }
 });

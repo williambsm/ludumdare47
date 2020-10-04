@@ -82,25 +82,25 @@
 		    <div v-if="page === 'missions'" class='mission-frame'>
 		    	<h1> Missions </h1>
 		    	<div class='mission-frame__grid'>
-		    		<div class='mission-frame__tile' v-for='n in 12'>
-		    			<div class='mission-tile -locked'> <!-- -locked applies blue to tile -->
+		    		<div class='mission-frame__tile' v-for='mission of missions.missions'>
+		    			<div class='mission-tile' :class="{ '-locked': mission.locked }"> <!-- -locked applies blue to tile -->
 		    				<div class='mission-tile__wrapper'>
-			    				<h3 class='mission-tile__header'> Test launch <small class='mission-tile__new'> New </small> </h3>
-			    				<p class='mission-tile__desc'> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-			    				<div class='mission-tile__success'> <span class='green-t'> 20% </span> Chance of Success </div>
+			    				<h3 class='mission-tile__header'> {{ mission.title }} <small v-if="mission.new" class='mission-tile__new'> New </small> </h3>
+			    				<p class='mission-tile__desc'> {{ mission.description }} </p>
+			    				<div class='mission-tile__success'> <span class='green-t'> {{ mission.probability }}% </span> Chance of Success </div>
 			    				<div class='mission-tile__details'>
 			    					<img src='assets/img/xp-icon.svg' alt='XP' class='mission-tile__details-icon' />
-			    					<span class='mission-tile__details-value'> $1,000,00 </span>
+			    					<span class='mission-tile__details-value'> ${{ mission.displayCost() }} </span>
 			    						<img src='assets/img/xp-icon.svg' alt='XP' class='mission-tile__details-icon' />
-			    					<span class='mission-tile__details-value'> $1,000,00 </span>
+			    					<span class='mission-tile__details-value'> ${{ mission.displayCurrencyEarnings() }} </span>
 			    						<img src='assets/img/xp-icon.svg' alt='XP' class='mission-tile__details-icon' />
-			    					<span class='mission-tile__details-value'> 2000 </span>
+			    					<span class='mission-tile__details-value'> {{ mission.displayExperienceEarnings() }} </span>
 			    				</div>
 			    				<div class='mission-tile__footer'>
-			    					<button class='button -green'> Select this mission </button>
+			    					<button v-on:click="missions.selectMission(mission); togglePage('launch')" class='button -green'> Select this mission </button>
 			    				</div>
 			    			</div>
-			    			<div class='mission-tile__locked-overlay'>
+			    			<div v-if="mission.locked" class='mission-tile__locked-overlay'>
 			    				<img src='assets/img/lock-icon.svg' alt='locked' class='mission-tile__locked-icon'/>
 			    				<strong class='mission-tile__locked-requirment'> Requires Advance Booster Upgrade </strong>
 			    			</div>
@@ -118,7 +118,7 @@
 	   				<div v-if="missions.results" class='mission-report__reward-row'>
 	   					<div class='mission-report__reward-box'>
 	   						<img src='assets/img/currency-icon.svg' alt='Money' class='mission-report__reward-icon' />
-	   						<span class='mission-report__reward-value'> ${{ this.missions.selectedMission.displayCurrencyEarnings()}} </span>
+	   						<span class='mission-report__reward-value'> ${{ this.missions.selectedMission.displayCurrencyEarnings() }} </span>
 	   					</div>
 	   					<div class='mission-report__reward-box'>
 	   						<img src='assets/img/xp-icon.svg' alt='XP' class='mission-report__reward-icon' />
@@ -130,8 +130,6 @@
 	   		</div>
 	   	</div>
     </div>
-	<!-- development version, includes helpful console warnings -->
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="dist/main.js"></script>
 </body>
 </html>

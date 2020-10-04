@@ -1,14 +1,16 @@
 export default class Mission {
     constructor (mission) {
         this.title = mission.title;
+        this.description = mission.description;
         this.experienceReward = mission.experienceReward;
         this.currencyReward = mission.currencyReward;
         this.currencyCost = mission.currencyCost;
         this.locked = mission.locked;
         this.cooldown = mission.cooldown;
-        this.probability = 80;
+        this.probability = mission.difficulty;
         this.successes = 0;
         this.failures = 0;
+        this.new = mission.new;
     }
 
     launchRocket () {

@@ -6,32 +6,52 @@ export default class MissionController {
         this.selectedMission = null;
         this.displayResults = false;
         this.results = null;
-        this.timeBetween = 5;
         this.timer = null;
         this.ready = true;
 
         this.missions = [
             new Mission({
                 title: "Test Mission",
+                description: "This is a text mission. Get your rocket going!",
                 experienceReward: 500,
                 currencyReward: 10000,
                 currencyCost: 0,
-                cooldown: 60,
-                locked: false
+                cooldown: 5,
+                difficulty: 90,
+                locked: false,
+                new: false,
             }),
             new Mission({
                 title: "First Mission",
+                description: "This is your first real mission! Get that money!",
                 experienceReward: 1000,
                 currencyReward: 20000,
                 currencyCost: 2000,
-                cooldown: 60,
-                locked: true
+                cooldown: 5,
+                difficulty: 60,
+                locked: false,
+                new: true,
+            }),
+            new Mission({
+                title: "Second Mission",
+                description: "This is your second mission! Get that money!",
+                experienceReward: 2000,
+                currencyReward: 40000,
+                currencyCost: 10000,
+                cooldown: 5,
+                difficulty: 30,
+                locked: true,
+                new: false,
             }),
         ];
     }
 
-    selectMission (missionIndex) {
-        this.selectedMission = this.missions[missionIndex];
+    selectMission (mission) {
+        this.selectedMission = mission;
+
+        if (mission.new) {
+            mission.new = false;
+        }
     }
 
     unlockMission (missionIndex) {
@@ -55,7 +75,7 @@ export default class MissionController {
 
         let missionController = this;
 
-        this.timer = new Countdown(this.timeBetween, function () {
+        this.timer = new Countdown(this.selectedMission.cooldown, function () {
             missionController.timer = null;
             missionController.ready = true;
         });
