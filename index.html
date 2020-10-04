@@ -42,7 +42,7 @@
 			</div>
 	    </div>
 	    <div class='page__frame'>
-		    <div class='launch-frame'>
+		    <div class='launch-frame' style='display: none'>
 		    	<div class='launch-frame__mission launch-mission' v-if="missions.selectedMission">
 		    		<h3 class='launch-mission__header'> Mission Overview </h3>
 		    		<div class='launch-mission__chance -high'> <!-- -high / -medium / -low -->
@@ -71,6 +71,35 @@
 		    				<span class='launch-details__label'> Mission Selected </span>
 		    				<big v-if="!missions.selectedMission" class='launch-details__value'> None Selected </big>
                             <big v-if="missions.selectedMission" class="launch-details__value"> {{ missions.selectedMission.title }}</big>
+		    			</div>
+		    		</div>
+		    	</div>
+		    </div>
+		    <div class='mission-frame'>
+		    	<h1> Missions </h1>
+		    	<div class='mission-frame__grid'> 
+		    		<div class='mission-frame__tile' v-for='n in 12'>
+		    			<div class='mission-tile -locked'> <!-- -locked applies blue to tile -->
+		    				<div class='mission-tile__wrapper'>
+			    				<h3 class='mission-tile__header'> Test launch <small class='mission-tile__new'> New </small> </h3>
+			    				<p class='mission-tile__desc'> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+			    				<div class='mission-tile__success'> <span class='green-t'> 20% </span> Chance of Success </div>
+			    				<div class='mission-tile__details'> 
+			    					<img src='assets/img/xp-icon.svg' alt='XP' class='mission-tile__details-icon' />
+			    					<span class='mission-tile__details-value'> $1,000,00 </span>
+			    						<img src='assets/img/xp-icon.svg' alt='XP' class='mission-tile__details-icon' />
+			    					<span class='mission-tile__details-value'> $1,000,00 </span>
+			    						<img src='assets/img/xp-icon.svg' alt='XP' class='mission-tile__details-icon' />
+			    					<span class='mission-tile__details-value'> 2000 </span>
+			    				</div>
+			    				<div class='mission-tile__footer'> 
+			    					<button class='button -green'> Select this mission </button>
+			    				</div>
+			    			</div>
+			    			<div class='mission-tile__locked-overlay'> 
+			    				<img src='assets/img/lock-icon.svg' alt='locked' class='mission-tile__locked-icon'/>
+			    				<strong class='mission-tile__locked-requirment'> Requires Advance Booster Upgrade </strong>
+			    			</div>
 		    			</div>
 		    		</div>
 		    	</div>
