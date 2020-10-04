@@ -16,16 +16,16 @@
 //@import "components/main/forms";
 //@import "components/main/typography";
 
-@import "layouts/grid";    
+@import "layouts/grid";
 
-body { 
+body {
 	background-color: #070d59;
 	font-family: 'Poppins', sans-serif;
 }
 
-.page { 
+.page {
 	height: 100%;
-	&__frame { 
+	&__frame {
 		padding-left: 300px;
 		height: 100%;
 		position: relative;
@@ -33,7 +33,7 @@ body {
 	}
 }
 
-.sidebar { 
+.sidebar {
 	background-color: #0c1048;
 	width: 300px;
 	height: 100%;
@@ -41,17 +41,17 @@ body {
 	padding: 20px;
 	position: fixed;
 	z-index: 3;
-	&__logo { 
+	&__logo {
 		padding: 20px;
 	}
-	&__status { 
+	&__status {
 		border: 2px dashed rgba(255,255,255,0.2);
 		text-align: center;
 		min-height: 70px;
 		padding: 40px 0 20px 0;
 		position: relative;
 		margin-top: 20px;
-		&:before { 
+		&:before {
 			content: 'STATUS';
 			position: absolute;
 			top: 15px;
@@ -61,22 +61,22 @@ body {
 			text-align: center;
 		}
 	}
-	&__currency { 
+	&__currency {
 		text-align: center;
 		margin: 40px 0;
 	}
-	&__navigation { 
-		
+	&__navigation {
+
 	}
 }
 
-.navigation { 
+.navigation {
 	text-align: center;
-	&__item { 
+	&__item {
 		display: block;
 		margin-bottom: 20px;
 	}
-	&__link { 
+	&__link {
 		color: white;
 		text-decoration: none;
 		background-color: #0f1451;
@@ -86,33 +86,33 @@ body {
 		display: block;
 		border-radius: 4px;
 		transition: all 150ms;
-		&:hover { 
+		&:hover {
 			background-color: lighten(#0f1451, 10%);
 		}
 	}
 }
 
-.currency-block { 
+.currency-block {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	&__icon { 
+	&__icon {
 		width: 34px;
 		height: auto;
 		margin: 0 10px 0 20px;
-		&:first-child { 
+		&:first-child {
 			margin-left: 0;
 		}
 	}
-	&__value { 
+	&__value {
 		font-size: 1.1em;
 	}
 }
 
-.launch-frame { 
+.launch-frame {
 	position: relative;
 	height: 100%;
-	&__mission { 
+	&__mission {
 		position: fixed;
 		top: 20px;
 		right: 20px;
@@ -121,7 +121,7 @@ body {
 		color: white;
 		width: 280px;
 	}
-	&__rocket { 
+	&__rocket {
 		position: absolute;
 		transform: translate(-50%, -50%);
 		top: 50%;
@@ -130,7 +130,7 @@ body {
 		max-height: 60%;
 		height: 100%;
 	}
-	&__bottom { 
+	&__bottom {
 		position: absolute;
 		bottom: 0;
 		left: 50%;
@@ -144,7 +144,7 @@ body {
 	}
 }
 
-.rocket-view { 
+.rocket-view {
 	&__img {
 		position: relative;
 		width: 100%;
@@ -152,13 +152,13 @@ body {
 		background-repeat: no-repeat;
 		background-size: auto 80%;
 		background-position: center;
-		&.-first { 
+		&.-first {
 			background-image: url('../img/rocket-one.png');
 		}
-		&.-second { 
+		&.-second {
 			background-image: url('../img/rocket-two.png');
 		}
-		&.-third { 
+		&.-third {
 			background-image: url('../img/rocket-three.png');
 		}
 	}
@@ -176,23 +176,23 @@ body {
 		width: 100%;
 		border: 0;
 		font-size: 1.1em;
-		&:hover { 
+		&:hover {
 			transform: translateY(-5px);
 		}
 	}
 }
 
-.launch-details { 
+.launch-details {
 	display: flex;
 	padding: 33px 30px 0px 30px;
 	width: 100%;
-	&__item { 
+	&__item {
 		text-align: center;
 		color: white;
 		border-right: 1px solid #3294fe;
 		padding: 5px 0;
 		width: 50%;
-		&:last-child { 
+		&:last-child {
 			border: 0;
 		}
 	}
@@ -201,36 +201,40 @@ body {
 		font-size: 1.4em;
 		font-weight: bold;
 		margin-top: 5px;
+
+		&--green {
+			color: lawngreen;
+		}
 	}
 }
 
-.launch-mission { 
-	&__header { 
+.launch-mission {
+	&__header {
 		text-transform: uppercase;
 		border-bottom: 1px solid #3294fe;
 		padding: 0 0 10px 0;
 		font-weight: bold;
 	}
-	&__chance { 
+	&__chance {
 		padding: 10px 0;
 	    text-align: center;
 	    background-color: #ba4444;
 	    border-radius: 3px;
 	    margin: 20px 0 15px;
-	    &.-low { 
+	    &.-low {
 	    	background-color: #ba4444;
 	    }
-	    &.-medium { 
+	    &.-medium {
 	    	background-color: #ffc107;
 	   	}
-	   	&.-high { 
+	   	&.-high {
 	   		background-color: #8bc34a;
 	   	}
 	}
-	&__stats { 
-		li { 
+	&__stats {
+		li {
 			padding: 10px 0;
-			strong { 
+			strong {
 				float: right;
 				font-weight: bold;
 			}

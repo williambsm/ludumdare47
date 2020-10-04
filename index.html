@@ -7,72 +7,75 @@
 </head>
 <body>
     <div id="game" class='page'>
-	    <div class='sidebar'> 
-	    	<div class='sidebar__logo'> 
+	    <div class='sidebar'>
+	    	<div class='sidebar__logo'>
 	    		<img src='assets/img/logo.png' alt='logo' class='u-full-width' />
 	    	</div>
-	    	<div class='sidebar__status'> 
-	    		<span class=''> Awaiting Mission Selection </span>
+	    	<div class='sidebar__status'>
+	    		<span class='' v-if="!missions.selectedMission"> Awaiting Mission Selection </span>
+                <span class='' v-if="missions.selectedMission"> {{ missions.selectedMission.title }} </span>
 	    	</div>
-	    	<div class='sidebar__currency'> 
+	    	<div class='sidebar__currency'>
 	    		<div class='currency-block'>
 	    			<img src='assets/img/currency-icon.svg' alt='currency' class='currency-block__icon' />
-					<span class='currency-block__value'> $1,000,000 </span>
+					<span class='currency-block__value'> {{ player.displayMoney() }} </span>
 					<img src='assets/img/xp-icon.svg' alt='currency' class='currency-block__icon' />
-					<span class='currency-block__value'> 1069 </span>
+					<span class='currency-block__value'> {{ player.displayExperience() }} </span>
 				</div>
 	    	</div>
 	    	<div class='sidebar__navigation'>
-				<ul class='navigation'> 
-					<li class='navigation__item'> 
-						<a href='' class='navigation__link'> Missions </a> 
+				<ul class='navigation'>
+					<li class='navigation__item'>
+						<a href='' class='navigation__link'> Missions </a>
 					</li>
-					<li class='navigation__item'> 
+					<li class='navigation__item'>
 						<a href='' class='navigation__link'> Upgrades </a>
 					</li>
-					<li class='navigation__item'> 
-						<a href='' class='navigation__link'> Achievements </a> 
+					<li class='navigation__item'>
+						<a href='' class='navigation__link'> Achievements </a>
 					</li>
-					<li class='navigation__item'> 
-						<a href='' class='navigation__link'> Log </a> 
+					<li class='navigation__item'>
+						<a href='' class='navigation__link'> Log </a>
 					</li>
 				</ul>
 			</div>
 	    </div>
 	    <div class='page__frame'>
-		    <div class='launch-frame'> 
-		    	<div class='launch-frame__mission launch-mission'> 
+		    <div class='launch-frame'>
+		    	<div class='launch-frame__mission launch-mission' v-if="missions.selectedMission">
 		    		<h3 class='launch-mission__header'> Mission Overview </h3>
-		    		<div class='launch-mission__chance -high'> 
-		    			80% Chance of Success
+		    		<div class='launch-mission__chance -high'>
+		    			{{ missions.selectedMission.probability }}% Chance of Success
 		    		</div>
 		    		<ul class='launch-mission__stats'>
-		    			<li> Mission Successes: <strong> 5 </strong> </li> 
-		    			<li> Mission Failures: <strong> 3 </strong> </li> 
-		    			<li> Mission Earnings: <strong> $1,000,000 </strong> </li>
-		    			<li> Mission Costs: <strong> $500,000 </strong></li>
-		    			<li> XP: <strong> 1000 </strong></li>
+		    			<li> Mission Successes: <strong> {{ missions.selectedMission.successes }} </strong> </li>
+		    			<li> Mission Failures: <strong> {{ missions.selectedMission.failures }} </strong> </li>
+		    			<li> Mission Earnings: <strong> ${{  missions.selectedMission.displayCurrencyEarnings() }} </strong> </li>
+		    			<li> Mission Costs: <strong> ${{ missions.selectedMission.displayCost() }} </strong></li>
+		    			<li> XP: <strong> {{ missions.selectedMission.displayExperienceEarnings() }} </strong></li>
 		    		</ul>
 		    	</div>
-		    	<div class='launch-frame__rocket rocket-view'> 
+		    	<div class='launch-frame__rocket rocket-view'>
 		    		<div class='rocket-view__img -second'> </div>
-		    		<button class='rocket-view__launch-btn'> Launch Rocket</button>
+		    		<button v-on:click="missions.launchMission(player, rocket)" class='rocket-view__launch-btn'> Launch Rocket</button>
 		    	</div>
-		    	<div class='launch-frame__bottom'> 
-		    		<div class='launch-details'> 
+		    	<div class='launch-frame__bottom'>
+		    		<div class='launch-details'>
 		    			<div class='launch-details__item'>
-		    				<span class='launch-details__label'> Launch Avaliable in </span>
-		    				<big class='launch-details__value'> 00:60 </big>
+		    				<span class='launch-details__label'> Launch Available in </span>
+		    				<big v-if="!missions.selectedMission.ready" class='launch-details__value'> 00:60 </big>
+                            <big v-if="missions.selectedMission.ready" class="launch-details__value launch-details__value--green"> READY </big>
 		    			</div>
 		    			<div class='launch-details__item'>
 		    				<span class='launch-details__label'> Mission Selected </span>
-		    				<big class='launch-details__value'> Non Selected </big>
+		    				<big v-if="!missions.selectedMission" class='launch-details__value'> None Selected </big>
+                            <big v-if="missions.selectedMission" class="launch-details__value"> {{ missions.selectedMission.title }}</big>
 		    			</div>
 		    		</div>
 		    	</div>
 		    </div>
 		</div>
-	    <!--<div> 
+	    <!--<div>
 	    	<rocket>^</rocket>
 	   	</div>-->
     </div>

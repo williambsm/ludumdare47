@@ -1,7 +1,7 @@
 const path = require('path');
 
 module.exports = {
-    mode: 'development',
+    mode: 'production',
     entry: './assets/js/main.js',
     output: {
         filename: 'main.js',
@@ -28,5 +28,9 @@ module.exports = {
     },
     optimization: {
         minimize: true
+    },
+    watch: true,
+    watchOptions: {
+        ignored: /node_modules/
     }
 };
