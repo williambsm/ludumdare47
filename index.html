@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <title>Rocket Science</title>
+    <link rel="icon" type="image/png" href="assets/img/favicon.png" />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
@@ -17,16 +18,16 @@
 	    	</div>
 	    	<div class='sidebar__currency'>
 	    		<div class='currency-block'>
-	    			<img src='assets/img/currency-icon.svg' alt='currency' class='currency-block__icon' />
+	    			<img src='assets/img/currency-icon.svg' alt='Money' class='currency-block__icon' />
 					<span class='currency-block__value'> {{ player.displayMoney() }} </span>
-					<img src='assets/img/xp-icon.svg' alt='currency' class='currency-block__icon' />
+					<img src='assets/img/xp-icon.svg' alt='XP' class='currency-block__icon' />
 					<span class='currency-block__value'> {{ player.displayExperience() }} </span>
 				</div>
 	    	</div>
 	    	<div class='sidebar__navigation'>
 				<ul class='navigation'>
 					<li class='navigation__item'>
-						<a href='' class='navigation__link'> Missions </a>
+						<a href='' class='navigation__link -active'> Missions </a>
 					</li>
 					<li class='navigation__item'>
 						<a href='' class='navigation__link'> Upgrades </a>
@@ -44,7 +45,7 @@
 		    <div class='launch-frame'>
 		    	<div class='launch-frame__mission launch-mission' v-if="missions.selectedMission">
 		    		<h3 class='launch-mission__header'> Mission Overview </h3>
-		    		<div class='launch-mission__chance -high'>
+		    		<div class='launch-mission__chance -high'> <!-- -high / -medium / -low -->
 		    			{{ missions.selectedMission.probability }}% Chance of Success
 		    		</div>
 		    		<ul class='launch-mission__stats'>
@@ -57,7 +58,7 @@
 		    	</div>
 		    	<div class='launch-frame__rocket rocket-view'>
 		    		<div class='rocket-view__img -second'> </div>
-		    		<button v-on:click="missions.launchMission(player, rocket)" class='rocket-view__launch-btn'> Launch Rocket</button>
+		    		<button v-on:click="missions.launchMission(player, rocket)" class='rocket-view__launch-btn'> Launch Rocket </button>
 		    	</div>
 		    	<div class='launch-frame__bottom'>
 		    		<div class='launch-details'>
@@ -78,6 +79,25 @@
 	    <!--<div>
 	    	<rocket>^</rocket>
 	   	</div>-->
+	   	<div class='modal-frame'> 
+	   		<div class='modal-frame__box'> 
+	   			<h2 class='modal-frame__header'> Mission Report </h2>
+	   			<div class='mission-report'>
+	   				<div class='mission-report__outcome -success'> <!-- -success / -failure --> </div>
+	   				<div class='mission-report__reward-row'>
+	   					<div class='mission-report__reward-box'>
+	   						<img src='assets/img/currency-icon.svg' alt='Money' class='mission-report__reward-icon' />
+	   						<span class='mission-report__reward-value'> $10,000 </span>
+	   					</div>
+	   					<div class='mission-report__reward-box'>
+	   						<img src='assets/img/xp-icon.svg' alt='XP' class='mission-report__reward-icon' />
+	   						<span class='mission-report__reward-value'> 100 </span>
+	   					</div>
+	   				</div>
+	   			</div>
+	   			<div class='modal-frame__close'> </div>
+	   		</div>
+	   	</div>
     </div>
 	<!-- development version, includes helpful console warnings -->
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
