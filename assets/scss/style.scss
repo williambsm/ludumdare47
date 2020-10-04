@@ -45,13 +45,13 @@ body {
 		position: relative;
 		z-index: 2;
 	}
-	h1 { 
+	h1 {
 		color: white;
 		font-size: 3em;
 		font-weight: 600;
 		padding: 0px 0;
 	    margin: -10px 0 33px 0;
-	    line-height: 100%;    
+	    line-height: 100%;
 	}
 }
 
@@ -105,6 +105,7 @@ body {
 		display: block;
 		border-radius: 4px;
 		transition: all 150ms;
+		cursor: pointer;
 		&:hover {
 			background-color: lighten($mediumBlue, 10%);
 		}
@@ -198,7 +199,7 @@ body {
 		&:hover:not(.-disabled) {
 			transform: translateY(-5px);
 		}
-		&.-disabled { 
+		&.-disabled {
 			background-image: none;
 			background-color: #999;
 			cursor: default;
@@ -209,7 +210,7 @@ body {
 
 .launch-details {
 	display: flex;
-	padding: 33px 30px 0px 30px;
+	padding: 33px 30px 0 30px;
 	width: 100%;
 	&__item {
 		text-align: center;
@@ -266,7 +267,7 @@ body {
 	}
 }
 
-.modal-frame { 
+.modal-frame {
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -274,7 +275,7 @@ body {
 	height: 100%;
 	background-color: rgba(0,0,0,0.7);
 	z-index: 10;
-	&__box { 
+	&__box {
 		width: 400px;
 		//min-height: 300px;
 		background-color: #3b4295;
@@ -285,7 +286,7 @@ body {
 		border-radius: 5px;
 		color: white;
 	}
-	&__close { 
+	&__close {
 		background-color: $blue;
 		border-radius: 50px;
 		width: 40px;
@@ -297,11 +298,11 @@ body {
 		background: white url('../img//cross-black.svg') no-repeat center/14px;
 		cursor: pointer;
 		transition: all 150ms;
-		&:hover { 
+		&:hover {
 			background-color: #ddd;
 		}
  	}
- 	&__header { 
+ 	&__header {
  		font-size: 1.2em;
 	    padding: 30px;
 	    text-align: center;
@@ -312,7 +313,7 @@ body {
 }
 
 .mission-report {
-	&__outcome { 
+	&__outcome {
 		font-size: 2em;
 		display: block;
 		text-align: center;
@@ -320,7 +321,7 @@ body {
 		font-weight: bold;
 		height: 160px;
 		position: relative;
-		&:before { 
+		&:before {
 			color: white;
 			padding: 10px 20px;
 			font-size: 16px;
@@ -330,14 +331,14 @@ body {
 			left: 50%;
 			transform: translateX(-50%);
 		}
-		&.-success { 
+		&.-success {
 			background: url('../img/mission-success.svg') no-repeat 50% 0/100px 100px;
 			&:before {
 				content: 'Successful Launch';
 				background-color: $green;
 			}
 		}
-		&.-failure { 
+		&.-failure {
 			background: url('../img/mission-failure.svg') no-repeat 50% 0/100px 100px;
 			&:before {
 				content: 'Launch Failed';
@@ -345,63 +346,63 @@ body {
 			}
 		}
 	}
-	&__reward-row { 
+	&__reward-row {
 		display: flex;
 		width: 100%;
 		border-top: 1px solid lighten(#3b4295, 20%);
 	}
-	&__reward-box { 
+	&__reward-box {
 		border-right: 1px solid lighten(#3b4295, 20%);
 		display: flex;
 		align-items: center;
 		justify-content: center;
 		width: 50%;
 		height: 70px;
-		&:last-child { 
+		&:last-child {
 			border-right: 0;
 		}
 	}
-	&__reward-icon { 
+	&__reward-icon {
 		width: 35px;
 		display: inline-block;
 		margin: 0 10px 0 30px;
-		&:first-child { 
+		&:first-child {
 			margin-left: 0;
 		}
 	}
-	&__reward-value { 
+	&__reward-value {
 		font-size: 1.4em;
 		display: inline-block;
 		margin-top: 3px;
 	}
 }
 
-.mission-frame { 
+.mission-frame {
 	padding: 40px;
-	&__grid { 
+	&__grid {
 		display: flex;
 		flex-wrap: wrap;
 	}
-	&__tile { 
+	&__tile {
 		flex: 0 0 32%;
 		margin-right: 1.5%;
 		margin-bottom: 20px;
-		&:nth-child(3n) { 
+		&:nth-child(3n) {
 			margin-right: 0;
 		}
 	}
 }
 
-.mission-tile { 
+.mission-tile {
 	$this: &;
 	color: white;
 	background-color: $darkBlue;
 	padding: 15px;
 	border-radius: 4px;
 	position: relative;
-	&.-locked { 
+	&.-locked {
 		box-shadow: inset 0 0 10px lighten($darkBlue, 10%);
-		#{$this}__wrapper { 
+		#{$this}__wrapper {
 			-webkit-filter: blur(5px);
 			-moz-filter: blur(5px);
 			-o-filter: blur(5px);
@@ -411,7 +412,7 @@ body {
 			border: 1px solid blue;
 		}
 	}
-	&__locked-overlay { 
+	&__locked-overlay {
 		content: ' ';
 		position: absolute;
 		top: 0;
@@ -424,7 +425,7 @@ body {
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
-		#{$this}__locked-icon { 
+		#{$this}__locked-icon {
 			width: 40px;
 			display: inline-block;
 		}
@@ -434,11 +435,11 @@ body {
 			margin-top: 20px;
 		}
 	}
-	&__header { 
+	&__header {
 		font-size: 1.3em;
 		margin: 10px 0 20px 0;
 	}
-	&__new { 
+	&__new {
 		background-color: $green;
 		padding: 1px 5px;
 		display: inline-block;
@@ -448,41 +449,41 @@ body {
 		top: -3px;
 		margin-left: 5px;
 	}
-	&__desc { 
+	&__desc {
 		line-height: 1.5em;
 		font-size: 0.9em;
 		color: #ccc;
 		height: 55px;
 	}
-	&__details { 
+	&__details {
 		display: flex;
 		align-items: center;
 		margin-top: 20px;
 		//justify-content: center;
 	}
-	&__details-icon { 
+	&__details-icon {
 		width: 26px;
 		display: inline-block;
 	}
-	&__details-value { 
+	&__details-value {
 		display: inline-block;
 		margin: 0 20px 0 7px;
 	}
-	&__success { 
+	&__success {
 		margin-top: 15px;
 	}
-	&__footer { 
+	&__footer {
 		border-top: 1px solid lighten($darkBlue, 10%);
 		padding-top: 15px;
 		margin-top: 15px;
 		text-align: right;
-		.button { 
+		.button {
 			width: 100%;
 		}
 	}
 }
 
-.button { 
+.button {
 	border: 0;
 	color: white;
 	padding: 10px 15px;
@@ -493,7 +494,7 @@ body {
 	cursor: pointer;
 	background: $blue;
 	transition: all 100ms;
-	&:hover { 
+	&:hover {
 		background: lighten($blue, 10%);
 	}
 }

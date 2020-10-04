@@ -6,11 +6,16 @@ import MissionController from './MissionController';
 var game = new Vue({
     el: "#game",
     data: {
+        page: 'launch',
         player: new Player(),
         rocket: new Rocket(),
         missions: new MissionController(),
     },
-    methods: {},
+    methods: {
+        togglePage: function (page) {
+            this.page = page;
+        }
+    },
     created: function () {
         this.missions.selectMission(0);
     }
