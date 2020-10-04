@@ -6,7 +6,6 @@ export default class Mission {
         this.currencyCost = mission.currencyCost;
         this.locked = mission.locked;
         this.cooldown = mission.cooldown;
-        this.ready = true;
         this.probability = 80;
         this.successes = 0;
         this.failures = 0;

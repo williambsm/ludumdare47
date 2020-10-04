@@ -58,14 +58,15 @@
 		    	</div>
 		    	<div class='launch-frame__rocket rocket-view'>
 		    		<div class='rocket-view__img -second'> </div>
-		    		<button v-on:click="missions.launchMission(player, rocket)" class='rocket-view__launch-btn'> Launch Rocket </button>
+		    		<button v-if="missions.ready" v-on:click="missions.launchMission(player, rocket)" class='rocket-view__launch-btn'> Launch Rocket </button>
+		    		<button v-if="!missions.ready" class='rocket-view__launch-btn -disabled'> Launch Rocket </button>
 		    	</div>
 		    	<div class='launch-frame__bottom'>
 		    		<div class='launch-details'>
 		    			<div class='launch-details__item'>
 		    				<span class='launch-details__label'> Launch Available in </span>
-		    				<big v-if="!missions.selectedMission.ready" class='launch-details__value'> 00:60 </big>
-                            <big v-if="missions.selectedMission.ready" class="launch-details__value launch-details__value--green"> READY </big>
+		    				<big v-if="!missions.ready" class='launch-details__value'> {{ missions.timer.displayCountdown() }} </big>
+                            <big v-if="missions.ready" class="launch-details__value launch-details__value--green"> READY </big>
 		    			</div>
 		    			<div class='launch-details__item'>
 		    				<span class='launch-details__label'> Mission Selected </span>

@@ -1,10 +1,14 @@
 import Mission from './Mission.js';
+import Countdown from './Countdown';
 
 export default class MissionController {
     constructor () {
         this.selectedMission = null;
         this.displayResults = false;
         this.results = null;
+        this.timeBetween = 5;
+        this.timer = null;
+        this.ready = true;
 
         this.missions = [
             new Mission({
@@ -49,6 +53,14 @@ export default class MissionController {
             this.results = false;
         }
 
+        let missionController = this;
+
+        this.timer = new Countdown(this.timeBetween, function () {
+            missionController.timer = null;
+            missionController.ready = true;
+        });
+
+        this.ready = false;
         this.displayResults = true;
     }
 
