@@ -53,6 +53,11 @@ body {
 	    margin: -10px 0 33px 0;
 	    line-height: 100%;
 	}
+	h2 { 
+		color: white;
+		font-size: 1.6em;
+		line-height: 100%;
+	}
 	&__frame-with-padding { 
 		padding: 40px 40px 40px 40px;
 	}
@@ -535,4 +540,62 @@ body {
  		margin: 14px 0 5px 0;
  		font-size: 0.9em;
   	}
+}
+
+.upgrades-frame { 
+	&__row { 
+		display: flex;
+		margin: 40px 0 60px 0;
+	}
+	&__cell { 
+		flex: 0 0 220px;
+		padding-right: 20px;
+	}
+}
+
+
+.upgrade-tile { 
+	background-color: $darkBlue;
+	padding: 15px 15px 50px 15px;
+	color: white;
+	text-align: center;
+	border-radius: 4px;
+	height: 100%;
+	position: relative;
+	&__image { 
+		width: 60px;
+		margin: 10px 0;
+	}
+	&__header { 
+		font-size: 1.2em;
+		margin: 10px 0 10px 0;
+		line-height: 1.5em;
+	}
+	&__desc { 
+		line-height: 1.5em;
+		font-size: 0.9em;
+		color: #ccc;
+		height: 55px;
+	}
+	&__purchase-type { 
+		position: absolute;
+	    top: -4px;
+	    right: -6px;
+	    width: 26px;
+	}
+	.button { 
+		position: absolute;
+		bottom: 15px;
+		left: 15px;
+		right: 15px;
+		width: calc(100% - 30px);
+		&.-purchased { 
+			background-color: $green;
+			cursor: default;
+		}
+		&.-locked { 
+			background-color: #999;
+			cursor: default;
+		}
+	}
 }

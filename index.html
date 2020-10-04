@@ -42,7 +42,7 @@
 			</div>
 	    </div>
 	    <div class='page__frame'>
-		    <div v-if="page === 'launch'" class='page__frame-with-padding launch-frame'>
+		    <div v-if="page === 'launch'" class='page__frame-with-padding launch-frame' style='display: none'>
 		    	<h1> Launch Control </h1>
 		    	<div class='launch-frame__right-column'>
 		    		<div class='dark-blue-box launch-mission' v-if="missions.selectedMission">
@@ -81,7 +81,6 @@
 			    			</div>
 			    		</div>
 			    	</div>
-
 		    	</div>
 		    	<div class='launch-frame__rocket rocket-view'>
 		    		<div class='rocket-view__img -second'> </div>
@@ -103,7 +102,7 @@
 		    		</div>
 		    	</div>
 		    </div>
-		    <div v-if="page === 'missions'" class='page__frame-with-padding mission-frame'>
+		    <div v-if="page === 'missions'" class='page__frame-with-padding mission-frame'  style='display: none'>
 		    	<h1> Missions </h1>
 		    	<div class='mission-frame__grid'>
 		    		<div class='mission-frame__tile' v-for='mission of missions.missions'>
@@ -128,6 +127,81 @@
 			    				<img src='assets/img/lock-icon.svg' alt='locked' class='mission-tile__locked-icon'/>
 			    				<strong class='mission-tile__locked-requirment'> Requires Advance Booster Upgrade </strong>
 			    			</div>
+		    			</div>
+		    		</div>
+		    	</div>
+		    </div>
+		    <div  class='page__frame-with-padding upgrades-frame' style='display: block'>
+		    	<h1> Upgrades </h1>
+		    	<h2> Rocket Upgrades </h2>
+		    	<div class='upgrades-frame__row'> 
+		    		<div class='upgrades-frame__cell'> 
+		    			<div class='upgrade-tile'> 
+		    				<img src='assets/img/upgrade-rocket-hull.svg' class='upgrade-tile__image' />
+		    				<h3 class='upgrade-tile__header'> Hull Upgrade I </h3>
+		    				<p class='upgrade-tile__desc'> Does something </p>
+		    				<button class='button'> $10,000,00 </button>
+		    				<img src='assets/img/currency-icon.svg' alt='Money' class='upgrade-tile__purchase-type' />
+		    			</div>
+		    		</div>
+		    		<div class='upgrades-frame__cell'> 
+		    			<div class='upgrade-tile'> 
+		    				<img src='assets/img/upgrade-rocket-engine.svg' class='upgrade-tile__image' />
+		    				<h3 class='upgrade-tile__header'> Engine Upgrade I </h3>
+		    				<p class='upgrade-tile__desc'> Does something </p>
+		    				<button class='button'> $10,000,00 </button>
+		    				<img src='assets/img/currency-icon.svg' alt='Money' class='upgrade-tile__purchase-type' />
+		    			</div>
+		    		</div>
+		    		<div class='upgrades-frame__cell'> 
+		    			<div class='upgrade-tile'> 
+		    				<img src='assets/img/upgrade-rocket-cargo.svg' class='upgrade-tile__image' />
+		    				<h3 class='upgrade-tile__header'> Cargo Upgrade I </h3>
+		    				<p class='upgrade-tile__desc'> Does something </p>
+		    				<button class='button'> $10,000,00 </button>
+		    				<img src='assets/img/currency-icon.svg' alt='Money' class='upgrade-tile__purchase-type' />
+		    			</div>
+		    		</div>
+		    	</div>
+		    	<h2> Company Upgrades </h2>
+		    	<div class='upgrades-frame__row'> 
+		    		<div class='upgrades-frame__cell'> 
+		    			<div class='upgrade-tile'> 
+		    				<img src='assets/img/upgrade-rocket-2.svg' class='upgrade-tile__image' />
+		    				<h3 class='upgrade-tile__header'> Multi-booster Rocket </h3>
+		    				<p class='upgrade-tile__desc'> Unlocks High Earth Orbit missions </p>
+		    				<button class='button'> 1000 XP </button>
+		    				<img src='assets/img/xp-icon.svg' alt='Money' class='upgrade-tile__purchase-type' />
+		    			</div>
+		    		</div>
+		    		<div class='upgrades-frame__cell'> 
+		    			<div class='upgrade-tile'> 
+		    				<img src='assets/img/upgrade-rocket-3.svg' class='upgrade-tile__image' />
+		    				<h3 class='upgrade-tile__header'> Shuttle </h3>
+		    				<p class='upgrade-tile__desc'> Unlocks Missions involving human flights </p>
+		    				<button class='button'> 2000 XP</button>
+		    				<img src='assets/img/xp-icon.svg' alt='Money' class='upgrade-tile__purchase-type' />
+		    			</div>
+		    		</div>
+		    	</div>
+		    	<h2> Rocket Types </h2>
+		    	<div class='upgrades-frame__row'> 
+		    		<div class='upgrades-frame__cell'> 
+		    			<div class='upgrade-tile'> 
+		    				<img src='assets/img/upgrade-rocket-2.svg' class='upgrade-tile__image' />
+		    				<h3 class='upgrade-tile__header'> Multi-booster Rocket </h3>
+		    				<p class='upgrade-tile__desc'> Unlocks High Earth Orbit missions </p>
+		    				<button class='button -purchased'> Purchased </button>
+		    				<img src='assets/img/currency-icon.svg' alt='Money' class='upgrade-tile__purchase-type' />
+		    			</div>
+		    		</div>
+		    		<div class='upgrades-frame__cell'> 
+		    			<div class='upgrade-tile'> 
+		    				<img src='assets/img/upgrade-rocket-3.svg' class='upgrade-tile__image' />
+		    				<h3 class='upgrade-tile__header'> Shuttle </h3>
+		    				<p class='upgrade-tile__desc'> Unlocks Missions involving human flights </p>
+		    				<button class='button -locked'> Locked </button>
+		    				<img src='assets/img/currency-icon.svg' alt='Money' class='upgrade-tile__purchase-type' />
 		    			</div>
 		    		</div>
 		    	</div>
