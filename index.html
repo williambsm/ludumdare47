@@ -27,7 +27,7 @@
 	    	<div class='sidebar__navigation'>
 				<ul class='navigation'>
                     <li v-on:click="togglePage('launch')" class='navigation__item'>
-                        <span class='navigation__link -active'> Launch Pad </span>
+                        <span class='navigation__link -active'> Launch Control </span>
                     </li>
 					<li v-on:click="togglePage('missions')" class='navigation__item'>
 						<span class='navigation__link -active'> Missions </span>
@@ -38,26 +38,50 @@
 					<li v-on:click="togglePage('achievements')" class='navigation__item'>
 						<span class='navigation__link'> Achievements </span>
 					</li>
-					<li v-on:click="togglePage('logs')" class='navigation__item'>
-						<span class='navigation__link'> Log </span>
-					</li>
 				</ul>
 			</div>
 	    </div>
 	    <div class='page__frame'>
-		    <div v-if="page === 'launch'" class='launch-frame'>
-		    	<div class='launch-frame__mission launch-mission' v-if="missions.selectedMission">
-		    		<h3 class='launch-mission__header'> Mission Overview </h3>
-		    		<div class='launch-mission__chance -high'> <!-- -high / -medium / -low -->
-		    			{{ missions.selectedMission.probability }}% Chance of Success
-		    		</div>
-		    		<ul class='launch-mission__stats'>
-		    			<li> Mission Successes: <strong> {{ missions.selectedMission.successes }} </strong> </li>
-		    			<li> Mission Failures: <strong> {{ missions.selectedMission.failures }} </strong> </li>
-		    			<li> Mission Earnings: <strong> ${{  missions.selectedMission.displayCurrencyEarnings() }} </strong> </li>
-		    			<li> Mission Costs: <strong> ${{ missions.selectedMission.displayCost() }} </strong></li>
-		    			<li> XP: <strong> {{ missions.selectedMission.displayExperienceEarnings() }} </strong></li>
-		    		</ul>
+		    <div v-if="page === 'launch'" class='page__frame-with-padding launch-frame'>
+		    	<h1> Launch Control </h1>
+		    	<div class='launch-frame__right-column'>
+		    		<div class='dark-blue-box launch-mission' v-if="missions.selectedMission">
+			    		<h3 class='dark-blue-box__header'> Mission Overview </h3>
+			    		<div class='launch-mission__chance -high'> <!-- -high / -medium / -low -->
+			    			{{ missions.selectedMission.probability }}% Chance of Success
+			    		</div>
+			    		<ul class='launch-mission__stats'>
+			    			<li> Mission Successes: <strong> {{ missions.selectedMission.successes }} </strong> </li>
+			    			<li> Mission Failures: <strong> {{ missions.selectedMission.failures }} </strong> </li>
+			    			<li> Mission Earnings: <strong> ${{  missions.selectedMission.displayCurrencyEarnings() }} </strong> </li>
+			    			<li> Mission Costs: <strong> ${{ missions.selectedMission.displayCost() }} </strong></li>
+			    			<li> XP: <strong> {{ missions.selectedMission.displayExperienceEarnings() }} </strong></li>
+			    		</ul>
+			    	</div>
+
+			    	<div class='dark-blue-box rocket-stats u-m-top-medium'>
+			    		<h3 class='dark-blue-box__header'> Rocket Stats </h3>
+			    		<div class='rocket-stats__type'> Single Booster Rocket </div>
+			    		<div class='rocket-stats__row'>
+			    			<span class='rocket-stats__label'> Hull </span>
+			    			<div class='rocket-stats__bar'> 
+			    				<span class='rocket-stats__bar-fill' style='width: 70%'> <!-- This is the dark blue bar --> </span>
+			    			</div>
+			    		</div>
+			    		<div class='rocket-stats__row'>
+			    			<span class='rocket-stats__label'> Engine </span>
+			    			<div class='rocket-stats__bar'> 
+			    				<span class='rocket-stats__bar-fill' style='width: 20%'> <!-- This is the dark blue bar --> </span>
+			    			</div>
+			    		</div>
+			    		<div class='rocket-stats__row'>
+			    			<span class='rocket-stats__label'> Cargo </span>
+			    			<div class='rocket-stats__bar'> 
+			    				<span class='rocket-stats__bar-fill' style='width: 50%'> <!-- This is the dark blue bar --> </span>
+			    			</div>
+			    		</div>
+			    	</div>
+
 		    	</div>
 		    	<div class='launch-frame__rocket rocket-view'>
 		    		<div class='rocket-view__img -second'> </div>
@@ -79,7 +103,7 @@
 		    		</div>
 		    	</div>
 		    </div>
-		    <div v-if="page === 'missions'" class='mission-frame'>
+		    <div v-if="page === 'missions'" class='page__frame-with-padding mission-frame'>
 		    	<h1> Missions </h1>
 		    	<div class='mission-frame__grid'>
 		    		<div class='mission-frame__tile' v-for='mission of missions.missions'>
