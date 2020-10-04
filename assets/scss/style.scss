@@ -112,6 +112,15 @@ body {
 .launch-frame { 
 	position: relative;
 	height: 100%;
+	&__mission { 
+		position: fixed;
+		top: 20px;
+		right: 20px;
+		background-color: #0c1048;
+		padding: 20px;
+		color: white;
+		width: 280px;
+	}
 	&__rocket { 
 		position: absolute;
 		transform: translate(-50%, -50%);
@@ -192,5 +201,39 @@ body {
 		font-size: 1.4em;
 		font-weight: bold;
 		margin-top: 5px;
+	}
+}
+
+.launch-mission { 
+	&__header { 
+		text-transform: uppercase;
+		border-bottom: 1px solid #3294fe;
+		padding: 0 0 10px 0;
+		font-weight: bold;
+	}
+	&__chance { 
+		padding: 10px 0;
+	    text-align: center;
+	    background-color: #ba4444;
+	    border-radius: 3px;
+	    margin: 20px 0 15px;
+	    &.-low { 
+	    	background-color: #ba4444;
+	    }
+	    &.-medium { 
+	    	background-color: #ffc107;
+	   	}
+	   	&.-high { 
+	   		background-color: #8bc34a;
+	   	}
+	}
+	&__stats { 
+		li { 
+			padding: 10px 0;
+			strong { 
+				float: right;
+				font-weight: bold;
+			}
+		}
 	}
 }
