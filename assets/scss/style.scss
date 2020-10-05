@@ -53,12 +53,12 @@ body {
 	    margin: -10px 0 33px 0;
 	    line-height: 100%;
 	}
-	h2 { 
+	h2 {
 		color: white;
 		font-size: 1.6em;
 		line-height: 100%;
 	}
-	&__frame-with-padding { 
+	&__frame-with-padding {
 		padding: 40px 40px 40px 40px;
 	}
 }
@@ -497,7 +497,7 @@ body {
 	}
 }
 
-.dark-blue-box { 
+.dark-blue-box {
 	background-color: $darkBlue;
 	padding: 20px;
 	color: white;
@@ -509,8 +509,8 @@ body {
 	}
 }
 
-.rocket-stats { 
-	&__type { 
+.rocket-stats {
+	&__type {
 		background-color: $mediumBlue;
 		padding: 9px;
 		text-align: center;
@@ -519,7 +519,7 @@ body {
 		font-size: 0.9em;
 		border-radius: 4px;
 	}
-	&__bar { 
+	&__bar {
 		background-color: $mediumBlue;
 		width: 100%;
 		height: 5px;
@@ -528,33 +528,33 @@ body {
 		overflow: hidden;
 		background: linear-gradient(90deg, rgba(246,86,75,1) 0%, rgba(200,244,148,1) 51%, rgba(68,255,76,1) 100%);
 	}
-	&__bar-fill { 
+	&__bar-fill {
 		position: absolute;
 		right: 0;
 		top: 0;
 		height: 100%;
 		background-color: $mediumBlue;
  	}
- 	&__label { 
+ 	&__label {
  		display: block;
  		margin: 14px 0 5px 0;
  		font-size: 0.9em;
   	}
 }
 
-.upgrades-frame { 
-	&__row { 
+.upgrades-frame {
+	&__row {
 		display: flex;
 		margin: 40px 0 60px 0;
 	}
-	&__cell { 
+	&__cell {
 		flex: 0 0 220px;
 		padding-right: 20px;
 	}
 }
 
 
-.upgrade-tile { 
+.upgrade-tile {
 	background-color: $darkBlue;
 	padding: 15px 15px 50px 15px;
 	color: white;
@@ -562,70 +562,70 @@ body {
 	border-radius: 4px;
 	height: 100%;
 	position: relative;
-	&__image { 
+	&__image {
 		width: 60px;
 		margin: 10px 0;
 	}
-	&__header { 
+	&__header {
 		font-size: 1.2em;
 		margin: 10px 0 10px 0;
 		line-height: 1.5em;
 	}
-	&__desc { 
+	&__desc {
 		line-height: 1.5em;
 		font-size: 0.9em;
 		color: #ccc;
 		height: 55px;
 	}
-	&__purchase-type { 
+	&__purchase-type {
 		position: absolute;
 	    top: -4px;
 	    right: -6px;
 	    width: 26px;
 	}
-	.button { 
+	.button {
 		position: absolute;
 		bottom: 15px;
 		left: 15px;
 		right: 15px;
 		width: calc(100% - 30px);
-		&.-purchased { 
+		&.-purchased {
 			background-color: $green;
 			cursor: default;
 		}
-		&.-locked { 
+		&.-locked {
 			background-color: #999;
 			cursor: default;
 		}
 	}
 }
 
-.achievements-frame { 
+.achievements-frame {
 	&__grid {
 		display: flex;
 		flex-wrap: wrap;
 	}
-	&__cell { 
+	&__cell {
 		flex: 0 0 16.5%;
 		padding: 0 10px 10px 0;
 	}
 }
 
-.achievement-box { 
+.achievement-box {
 	color: white;
 	text-align: center;
 	background-color: $darkBlue;
 	padding: 15px;
 	border-radius: 10px;
-	&__icon { 
+	&__icon {
 		width: 80px;
 	}
-	&__name { 
+	&__name {
 		margin: 10px 0 10px 0;
 		line-height: 1.5em;
 		display: block;
 	}
-	&__desc { 
+	&__desc {
 		line-height: 1.5em;
 		font-size: 0.8em;
 		color: #ccc;

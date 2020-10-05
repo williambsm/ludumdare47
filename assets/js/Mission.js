@@ -5,12 +5,12 @@ export default class Mission {
         this.experienceReward = mission.experienceReward;
         this.currencyReward = mission.currencyReward;
         this.currencyCost = mission.currencyCost;
-        this.locked = mission.locked;
+        this.level = mission.level;
         this.cooldown = mission.cooldown;
         this.probability = mission.difficulty;
         this.successes = 0;
         this.failures = 0;
-        this.new = mission.new;
+        this.new = true;
     }
 
     launchRocket () {
@@ -36,5 +36,9 @@ export default class Mission {
 
     displayCost () {
         return this.currencyCost.toLocaleString();
+    }
+
+    hasClearance(player) {
+        return player.level < this.level;
     }
 }
