@@ -131,7 +131,7 @@
 		    		</div>
 		    	</div>
 		    </div>
-		    <div  class='page__frame-with-padding upgrades-frame' style='display: block'>
+		    <div class='page__frame-with-padding upgrades-frame' style='display: none'>
 		    	<h1> Upgrades </h1>
 		    	<h2> Rocket Upgrades </h2>
 		    	<div class='upgrades-frame__row'> 
@@ -202,6 +202,25 @@
 		    				<p class='upgrade-tile__desc'> Unlocks Missions involving human flights </p>
 		    				<button class='button -locked'> Locked </button>
 		    				<img src='assets/img/currency-icon.svg' alt='Money' class='upgrade-tile__purchase-type' />
+		    			</div>
+		    		</div>
+		    	</div>
+		    </div>
+		    <div class='page__frame-with-padding achievements-frame' style='display: block'>
+		    	<h1> Achievements </h1>
+		    	<div class='achievements-frame__grid'> 
+		    		<div class='achievements-frame__cell' v-for='n in 15'>
+		    			<div class='achievement-box'>
+		    				<img :src="'assets/img/achievements/ach-'+ n +'.svg'" class='achievement-box__icon' />
+		    				<div class='achievement-box__name'> Lets get high </div>
+		    				<div class='achievement-box__desc'> Unlock Multi-stage booster Rocket </div>
+		    			</div>
+		    		</div>
+		    		<div class='achievements-frame__cell'>
+		    			<div class='achievement-box'>
+		    				<img :src="'assets/img/achievements/locked.svg'" class='achievement-box__icon' />
+		    				<div class='achievement-box__name'> Locked Example </div>
+		    				<div class='achievement-box__desc'> Unlock Multi-stage booster Rocket </div>
 		    			</div>
 		    		</div>
 		    	</div>

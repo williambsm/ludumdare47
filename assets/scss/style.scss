@@ -599,3 +599,35 @@ body {
 		}
 	}
 }
+
+.achievements-frame { 
+	&__grid {
+		display: flex;
+		flex-wrap: wrap;
+	}
+	&__cell { 
+		flex: 0 0 16.5%;
+		padding: 0 10px 10px 0;
+	}
+}
+
+.achievement-box { 
+	color: white;
+	text-align: center;
+	background-color: $darkBlue;
+	padding: 15px;
+	border-radius: 10px;
+	&__icon { 
+		width: 80px;
+	}
+	&__name { 
+		margin: 10px 0 10px 0;
+		line-height: 1.5em;
+		display: block;
+	}
+	&__desc { 
+		line-height: 1.5em;
+		font-size: 0.8em;
+		color: #ccc;
+	}
+}
