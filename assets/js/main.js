@@ -9,7 +9,7 @@ var game = new Vue({
         page: 'launch',
         player: new Player(),
         rocket: new Rocket(),
-        missions: new MissionController(),
+        missions: null,
     },
     methods: {
         togglePage: function (page) {
@@ -17,6 +17,7 @@ var game = new Vue({
         }
     },
     created: function () {
+        this.missions = new MissionController(this.rocket);
         this.missions.selectMission(this.missions.missions[0]);
     }
 });

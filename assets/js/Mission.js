@@ -1,5 +1,5 @@
 export default class Mission {
-    constructor (mission) {
+    constructor (mission, rocket) {
         this.title = mission.title;
         this.description = mission.description;
         this.experienceReward = mission.experienceReward;
@@ -7,13 +7,20 @@ export default class Mission {
         this.currencyCost = mission.currencyCost;
         this.level = mission.level;
         this.cooldown = mission.cooldown;
-        this.probability = mission.difficulty;
+        this.difficulty = mission.difficulty;
         this.successes = 0;
         this.failures = 0;
         this.new = true;
+        this.probability = this.calculateProbability(rocket);
     }
 
-    launchRocket () {
+    calculateProbability (rocket) {
+        return Math.floor(rocket.getScore() * 100 / this.difficulty);
+    }
+
+    startMission (rocket) {
+        this.probability = this.calculateProbability(rocket);
+
         var check = Math.floor(Math.random() * Math.floor(100));
         return (check < this.probability);
     }
